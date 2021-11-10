@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kart-ON Pikseller</title>
+    <link rel="stylesheet" href="../style/index.css">
+    <style>
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+            min-width: 480px;
+            min-height: 480px;
+        }
+
+        tr {
+            height: 10%;
+        }
+
+        td {
+            width: 10%;
+        }
+
+    </style>
+</head>
+<body>
+<h1>pikselleri dolduralım</h1>
+
+<p> Pikseller, dijital görüntülerde, bir renk ile dolu en küçük karedir. Pikseller, gözlerimiz ile gördüğümüz dünyayı, sınırlı renk ve sınırlı yüzeye aktarmak için bizim oluşturduğumuz bir birimdir. Nasıl mı? Dışaırda bir ördek gördük diyelim. </p>
+
+<img src="../img/duck.jpg">
+
+<p>Bu ördeği sadece sınırlı sayıdaki bir kareli alanı kullanarak ve her bir kareye sadece tek renk düşecek şekilde çizmenizi istersek, sonuç neye benzeyebilir? Burada doldurduğun her bir tek renk kare, bir pikseldir. Bilgisayar ekranları her bir pikselin arkasında bir adet LED ampül bulundurur. LED ampüllerin renklerini değiştirerek, farklı resimleri gösterebilir.</p>
+
+<div class="wrap">
+    <div>
+        <p>Aşağıdaki ördek çizimini, yanda gördüğün pikseller üzerinde tamamlayabilir misin?</p>
+        <img src="../img/duck-art.png">
+    </div>
+    <div class="half">
+        <span>Renk seç: <input type="color" id="colorPicker"></span>
+        <div style="background-color: white" id="pixelCanvas"></div>
+    </div>
+</div>
+
+<script>
+    // Select color input
+    let inputColor = document.getElementById("colorPicker");
+    // Select size input
+    let tableCanvas = document.getElementById("pixelCanvas");
+    makeGrid();
+
+    // When size is submitted by the user, call makeGrid()
+    function makeGrid() {
+        let table = document.createElement('table')
+        const height = 8;
+        const width = 8;
+        for (let w = 0; w < width; w++) {
+            const row = table.insertRow();
+            for (let h = 0; h < height; h++) {
+                const cell = row.insertCell();
+                cell.addEventListener("click", event => {
+                    event.preventDefault();
+                    event.target.style.backgroundColor = inputColor.value
+                })
+            }
+        }
+        let children = tableCanvas.childNodes ? tableCanvas.childNodes : []
+        if (children && children.length === 1) {
+            tableCanvas.replaceChild(table, children[0])
+        } else {
+            tableCanvas.append(table)
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kart-ON Renkler</title>
+    <link rel="stylesheet" href="../style/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro/dist/iro.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>kodlamada renklerin kullanımı</h1>
+
+<div class='parent'>
+    <p>Kodlama ile çizim ve animasyon yapacaksak, bilgisayarlara renk tanımlarını bir şekilde aktarmamız gerekir. Peki, renkleri bilgisayarların anlayabileceği şekilde nasıl tanımlayabiliriz? </p>
+    <p> Bilgisayarlar sadece sayılar ile işlem yapabilen gelişmiş hesap makineleridir. Bu nedenle, bir rengi bilgisayara tanımlamak istiyorsak, o rengin matematiksel tanımını oluşturmamız gerekir. Bunun için kodlamada kullanılan tanımlardan biri HSL renk tanımıdır.</p>
+    <p><b>HSL: Hue (ton), Saturation (Doygunluk), Light (ışık)</b></p>
+    <p> Bu renk tanımında, görebildiğimiz tüm renk tonlarını bir dairenin içine koyup, her bir rengi bu dairedeki konumuna göre ifade ederiz. Dairenin 360 derece dönen yüzeyinde renklerin farklı tonlarını bulursun. Dairenin merkezinden dışa doğru ilerledikçe renkler giderek doygunlaşır. Parlaklığı da bu daireye eklenecek ek bir eksende temsil ederek görebildiğimiz tüm renkleri temsil edebilirsin.
+    </p>
+</div>
+
+<div class="wrap">
+    <div class="half picker">
+        <h2>Renk Seçici</h2>
+        <div class="colorPicker"></div>
+        <h3>HSL Tanımı:</h3>
+        <div id="values"></div>
+        <div id="out" style="width:80px;height:80px;border:1px solid #000;"></div>
+    </div>
+    <div class="half readout">
+        <p>
+            Soldaki Renk Seçiciyi kullanarak, H (ton), S (doygunluk) ve L (ışık) değerlerini bul:
+        </p>
+        <div id="asked" style="width:auto;height:100px;border:1px solid #000;"></div>
+        <button class="button-purple" id=hsl_submit>Onayla</button>
+        <pre id="hsl_report"></pre>
+        <button class="button-purple" id="next_question" onclick="nextQuestion()" hidden>Sonraki Soru</button>
+    </div>
+</div>
+
+<script>
+    asked.style.backgroundColor = chroma.random();
+    // Create a new color picker instance
+    // https://iro.js.org/guide.html#getting-started
+    var colorPicker = new iro.ColorPicker(".colorPicker", {
+        // color picker options
+        // Option guide: https://iro.js.org/guide.html#color-picker-options
+        width: 280,
+        color: "rgb(255, 0, 0)",
+        borderWidth: 1,
+        borderColor: "#fff"
+    });
+
+
+    var values = document.getElementById("values");
+    var out = document.getElementById("out");
+
+    // https://iro.js.org/guide.html#color-picker-events
+    colorPicker.on(["color:init", "color:change"], function (color) {
+        values.innerHTML = ["hsl: " + color.hslString].join("<br>");
+        out.style.backgroundColor = color.rgbString;
+
+    });
+
+    window.addEventListener('load', (event) => {
+        document.getElementById("hsl_submit").addEventListener('click', function () {
+            submitted("hsl_report");
+        });
+    });
+
+    function color_meter() {
+        var cwith2 = out.style.backgroundColor;
+        var ccolor2 = asked.style.backgroundColor;
+        console.log(cwith2);
+        console.log(ccolor2)
+
+        if (!cwith2 && !ccolor2) return;
+
+        var _cwith2 = cwith2.slice(4).split(',');
+        var _ccolor2 = ccolor2.slice(4).split(',');
+
+        var r1 = parseInt(_cwith2[0]);
+        var g1 = parseInt(_cwith2[1]);
+        var b1 = parseInt(_cwith2[2]);
+
+        var r2 = parseInt(_ccolor2[0]);
+        var g2 = parseInt(_ccolor2[1]);
+        var b2 = parseInt(_ccolor2[2]);
+
+        console.log([r1, r2, g1, g2, b1, b2]);
+
+        return Math.sqrt(((r1 - r2) ** 2) + ((g1 - g2) ** 2) + ((b1 - b2) ** 2));
+
+    }
+
+    function submitted(report_id) {
+        let x = color_meter();
+        let message = "";
+        if (x <= 50) {
+            message = "Çok iyi! 🥇\n";
+        } else if (x > 50 && x < 100) {
+            message = "Daha iyisini yapabileceğini biliyorum!";
+        } else {
+            message = "Tekrar dene!";
+        }
+        console.log(x);
+        document.getElementById(report_id).innerText = message;
+        document.getElementById("next_question").hidden = false;
+    }
+
+    function nextQuestion() {
+        document.getElementById("next_question").hidden = true;
+        asked.style.backgroundColor = chroma.random();
+    }
+
+</script>
+</body>
+</html>

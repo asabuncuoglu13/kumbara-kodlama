@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kart-ON ile Kodlama</title>
+    <link href='../style/dragula.css' rel='stylesheet' type='text/css'/>
+    <link href='../style/activity.css' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="../style/prism.css">
+    <link rel="stylesheet" href="../style/index.css">
+</head>
+<body>
+<h1>Kodlama Nedir?</h1>
+<div class='parent'>
+    <p>
+        Bugün heyecanlı bir öğrenme yolculuğuna çıkıyoruz! Senin için yaratıcı programlamanın temellerini öğreneceğin bir dizi içerik hazırladık. Temelden başlayıp, çok enteresan işler yapacağız. Mesela, aşağıda fare imlecini sürükleyerek çizim yapmanı sağlayan programı da sen yazacaksın!
+    </p>
+    <iframe src="https://preview.p5js.org/asabuncuoglu13/embed/IwWQSQkzz" width="100%" height="400px"></iframe>
+</div>
+
+<h2>Kodlama Komutları</h2>
+
+<div class='parent'>
+    <p>Bu çizimleri yapabilmek için bu süreçte iki farklı aracı kullanacağız. Bu araçlar, kodlarımızı oluştururken bilgisayara isteklerimizi aktarabilmemizi sağlayabilecek komutları içermektedir. Kullanacağımız ilk araç, Kart-ON, problem çözme adımlarımızın tasarımını kolaylaştıracak. Sonra da, web üzerinde çizim ve animasyon oluşturmamızı sağlayan p5.js kütüphanesini kullanarak arkadaşlarımıza gösterebileceğimiz çıktılar üreteceğiz.</p>
+    <div class='wrapper'>
+        <div id='left-copy-1tomany' class='container container-left'>
+            <div id="fill240"><img src="../media/doldur240.png" alt="doldur#240"></div>
+            <div id="rect"><img src="../media/dikdortgen.png" alt="dikdörtgen"></div>
+        </div>
+        <div id='right-copy-1tomany' class='container container-right'>
+        </div>
+        <div id='image-result' class='container'>
+            <img id="code1" src="../img/bluerect.png" hidden>
+            <img id="code2" src="../img/greyrect.png" hidden>
+        </div>
+        <p id="console"></p>
+
+        <button class="button-purple" onclick="checkResult()"><u>Kontrol Et</u></button>
+    </div>
+</div>
+
+<script src='../js/dragula.js'></script>
+<script src="../js/drag.js"></script>
+<script>
+    function checkResult() {
+        var text = document.getElementById("console").innerText;
+        if (text.includes("fill240 - rect")) {
+            document.getElementById("code1").hidden = false;
+            document.getElementById("code2").hidden = true;
+        } else if (text.includes("rect - fill240")) {
+            document.getElementById("code1").hidden = true;
+            document.getElementById("code2").hidden = false;
+        } else if (!text.includes("fill240") && text.includes("rect")) {
+            document.getElementById("code1").hidden = true;
+            document.getElementById("code2").hidden = false;
+        } else {
+            document.getElementById("code1").hidden = true;
+            document.getElementById("code2").hidden = true;
+        }
+    }
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script src="../js/prism.js" data-manual></script>
+</body>
+</html>

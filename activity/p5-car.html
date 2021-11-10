@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1000, initial-scale=1">
+<link href='../style/activity.css' rel='stylesheet' type='text/css'/>
+<link rel="stylesheet" href="../style/prism.css">
+<link rel="stylesheet" href="../style/index.css">
+<title>Kart-ON ve p5</title>
+
+<h1>p5.js ile çizim kodlama</h1>
+
+<div class='parent'>
+    <p> Çizim yapmak, düşüncelerimizi etkili bir şekilde aktarmak için doğal bir yöntemdir. Çizim yaparken hem eğleniriz hem de fikirlerimizi hızlıca görselleştirebiliriz. Bu iletişim biçimindeki en temel hedef, kısa sürede birçok fikri keşfedebilmektir. O zaman bir çizimi kodlama yaparak ifade edebilirsek, dünyadaki sayısız insana düşüncelerimizi dinamik bir biçimde aktarabiliriz!
+    </p>
+
+    <p> Bu seride, çizim ve animasyonlarımızı kodlamak için p5.js adında bir kodlama kütüphanesini kullanacağız. Bu çizim kütüphanesinin yirmi yıllık bir tarihi ve birbiri ile yardımlaşmayı çok seven bir kullanıcı topluluğu var. Yaklaşık yirmi sene önce, hızlı bir şekilde çizim, animasyon ve diğer görsel sanat ürünlerini kodlayabilmek için geliştirilen bu dil ile birçok dijital eser yaratıldı. Seri içinde bu örneklerden bazılarını da seninle paylaşacağız. Serinin bu ilk örneğinde ise, bir p5.js kodunun neye benzediğini göreceğiz.
+    </p>
+</div>
+<h2 id="quick-start">p5.js kod yapısı</h2>
+
+<div class='parent'>
+    <p>
+        p5.js kodu iki temel parçadan oluşur. <b>setup()</b> adındaki ilk parça tüm program için gerekli olan işlemleri başlatır. Bu kod parçası program ilk çalıştığında bir kere çalışır ve bir daha çalışmasına gerek kalmaz.<b>setup()</b> yani başlangıç kodunda, çizilecek ekranın boyutu, arkaplan rengi gibi tek seferde ve en başta belirlemen gereken işlemleri çalıştırırsın. Sonrasında yazacağın kodlar ise <b>draw()</b> kod parçası içinde yer alacaktır. Bu parça, ekranın her yenilenmesinde çalışarak sürekli bir döngü oluşturur.
+    </p>
+</div>
+
+<h2>p5.js ile araba çizimi</h2>
+
+<div class='parent'>
+    <img src="../excali/1.png">
+    p5.js ile çalışırken, bir Javascript kodu yazdığını bilmen gerekiyor. Yani, Javascript'in temel dil kuralları burada da geçerli. Örneğin fonksiyonlar içinde yazdığın kodlar <b>{ }</b> sembolleri arasında olmalıdır, fonksiyonlardan sonra <b>;</b> işareti konulmalıdır. Ayrıca Javascript büyük harfe ve küçük harfe duyarlıdır. Tüm bu kuralları serimiz içinde tekrar ederek daha iyi anlayacak ve hatırlayacaksın.
+
+    <ol>
+        <li><b>createCanvas()</b> komutuna girdi olarak başlatmak istediğin ekranın genişlik ve yüksekliğini vermen gerekir.</li>
+        <li><b>background()</b> arkaplan rengini belirler.</li>
+        <li><b>fill()</b> komutu kendinden sonra gelen şekillerin rengini belirler.</li>
+        <li><b>rect()</b> komutu dikdörtgen çizer.</li>
+        <li><b>ellipse()</b> komutu elips çizer.</li>
+    </ol>
+
+    <script type="text/p5" data-autoplay data-preview-width="500" data-height="500">
+function setup() {
+  createCanvas(300, 300);
+  colorMode(HSB, 360, 100, 100);
+  background(300, 100, 100);
+}
+
+function draw() {
+  fill(100, 100, 100);
+  rect(20, 30, 120, 90);
+  ellipse(40, 135, 30, 30);
+  ellipse(120, 135, 30, 30);
+}
+
+
+    </script>
+
+
+    <div class='parent'>
+        <p class="card">
+            Peki, yukarıdaki tanımları nereden bulabilirim veya özelliklerini nasıl keşfedebilirim gibi soruları
+            soruyorsanız, cevapları nereden alabilirsiniz?
+            <br><br>
+            <a href="https://p5js.org/reference/">p5.js Referans</a> web sitesinde tüm komutların bir listesi var. Eğer
+            komutların üstüne tıklarsaniz, tüm detayları ve bazı örnek kullanımları görebilirsiniz.
+        </p>
+
+
+        <script src="../js/jquery.js"></script>
+        <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+        <script src="../js/prism.js" data-manual></script>
