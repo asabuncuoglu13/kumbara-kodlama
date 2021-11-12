@@ -9,34 +9,44 @@
     <link rel="stylesheet" href="../style/index.css">
 </head>
 <body>
-<h1>Kodlama Nedir?</h1>
-<div class='parent'>
-    <p>
-        Bugün heyecanlı bir öğrenme yolculuğuna çıkıyoruz! Senin için yaratıcı programlamanın temellerini öğreneceğin bir dizi içerik hazırladık. Temelden başlayıp, çok enteresan işler yapacağız. Mesela, aşağıda fare imlecini sürükleyerek çizim yapmanı sağlayan programı da sen yazacaksın!
-    </p>
-    <iframe src="https://preview.p5js.org/asabuncuoglu13/embed/IwWQSQkzz" width="100%" height="400px"></iframe>
-</div>
 
-<h2>Kodlama Komutları</h2>
-
-<div class='parent'>
-    <p>Bu çizimleri yapabilmek için bu süreçte iki farklı aracı kullanacağız. Bu araçlar, kodlarımızı oluştururken bilgisayara isteklerimizi aktarabilmemizi sağlayabilecek komutları içermektedir. Kullanacağımız ilk araç, Kart-ON, problem çözme adımlarımızın tasarımını kolaylaştıracak. Sonra da, web üzerinde çizim ve animasyon oluşturmamızı sağlayan p5.js kütüphanesini kullanarak arkadaşlarımıza gösterebileceğimiz çıktılar üreteceğiz.</p>
-    <div class='wrapper'>
-        <div id='left-copy-1tomany' class='container container-left'>
-            <div id="fill240"><img src="../media/doldur240.png" alt="doldur#240"></div>
-            <div id="rect"><img src="../media/dikdortgen.png" alt="dikdörtgen"></div>
-        </div>
-        <div id='right-copy-1tomany' class='container container-right'>
-        </div>
-        <div id='image-result' class='container'>
-            <img id="code1" src="../img/bluerect.png" hidden>
-            <img id="code2" src="../img/greyrect.png" hidden>
-        </div>
-        <p id="console"></p>
-
-        <button class="button-purple" onclick="checkResult()"><u>Kontrol Et</u></button>
+<div id="1">
+    <h1>Kodlama Nedir?</h1>
+    <div class='parent'>
+        <p>
+            Bugün heyecanlı bir öğrenme yolculuğuna çıkıyoruz! Senin için yaratıcı programlamanın temellerini öğreneceğin bir dizi içerik hazırladık. Temelden başlayıp, çok enteresan işler yapacağız. Örneğin, aşağıda fare imleci hızına göre fırça boyunu değiştirebilen programı yazacağız!
+        </p>
+        <iframe src="https://preview.p5js.org/asabuncuoglu13/embed/IwWQSQkzz" width="100%" height="400px"></iframe>
     </div>
 </div>
+
+<div id="2" hidden>
+    <h1>Kodlama Komutları</h1>
+
+    <div class='parent'>
+        <p>Bu çizimleri yapabilmek için bu süreçte iki farklı aracı kullanacağız. Bu araçlar, kodlarımızı oluştururken bilgisayara isteklerimizi aktarabilmemizi sağlayabilecek komutları içermektedir. Kullanacağımız ilk araç, Kart-ON, problem çözme adımlarımızın tasarımını kolaylaştıracak. Sonra da, web üzerinde çizim ve animasyon oluşturmamızı sağlayan p5.js kütüphanesini kullanarak arkadaşlarımıza gösterebileceğimiz çıktılar üreteceğiz.</p>
+        <p>Kart-ON ile program oluştururken, komut bloklarını alt alta dizeriz. Şimdi ilk denememizi yapalım ve aşağıdaki iki komutu kodlama alanına sürükleyelim ve <b>Kontrol Et</b> butonuna tıklyalım.</p>
+        <div class='wrapper'>
+            <div id='left-copy-1tomany' class='container container-left'>
+                <div id="fill240"><img src="../media/doldur240.png" alt="doldur#240"></div>
+                <div id="rect"><img src="../media/dikdortgen.png" alt="dikdörtgen"></div>
+            </div>
+            <div id='right-copy-1tomany' class='container container-right'>
+            </div>
+            <div id='image-result' class='container'>
+                <img id="code1" src="../img/bluerect.png" hidden>
+                <img id="code2" src="../img/greyrect.png" hidden>
+            </div>
+            <p id="console"></p>
+
+            <button class="button-purple" onclick="checkResult()"><u>Kontrol Et</u></button>
+        </div>
+    </div>
+</div>
+
+<button id="prev" class="button-background-move left" onclick="prev()" hidden><u>< Önceki</u></button>
+<button id="next" class="button-background-move right" onclick="next()"><u>Sonraki ></u></button>
+<button id="next_subject" class="button-background-move right" onclick="nextSubject()" hidden><u>Sonraki Konu: Renk Tanımları</u></button>
 
 <script src='../js/dragula.js'></script>
 <script src="../js/drag.js"></script>
@@ -56,6 +66,25 @@
             document.getElementById("code1").hidden = true;
             document.getElementById("code2").hidden = true;
         }
+    }
+
+    function prev() {
+        document.getElementById("1").hidden = false;
+        document.getElementById("2").hidden = true;
+        document.getElementById("next").hidden = false;
+        document.getElementById("prev").hidden = true;
+    }
+
+    function next() {
+        document.getElementById("1").hidden = true;
+        document.getElementById("2").hidden = false;
+        document.getElementById("next").hidden = true;
+        document.getElementById("prev").hidden = false;
+        document.getElementById("next_subject").hidden = false;
+    }
+
+    function nextSubject(){
+        window.location.href="colors.html";
     }
 </script>
 

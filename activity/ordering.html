@@ -48,9 +48,15 @@
     </div>
 
 </div>
+
+<button id="next_subject" class="button-background-move right" onclick="nextSubject()"><u>Sonraki Konu: Kodlama ile Araba Çizimi</u></button>
+
 <script src='../js/dragula.js'></script>
 <script src="../js/drag.js"></script>
 <script>
+    function nextSubject() {
+        window.location.href = "p5-car.html";
+    }
     function checkResult() {
         var text = document.getElementById("console").innerText;
         if (text.includes("fill240 - rect - fill50 - elips")) {

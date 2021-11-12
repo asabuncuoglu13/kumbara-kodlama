@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Kart-ON Renkler</title>
+    <link href='../style/activity.css' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="../style/index.css">
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro/dist/iro.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
@@ -21,26 +22,35 @@
     </p>
 </div>
 
-<div class="wrap">
-    <div class="half picker">
-        <h2>Renk Seçici</h2>
-        <div class="colorPicker"></div>
-        <h3>HSL Tanımı:</h3>
-        <div id="values"></div>
-        <div id="out" style="width:80px;height:80px;border:1px solid #000;"></div>
-    </div>
-    <div class="half readout">
-        <p>
-            Soldaki Renk Seçiciyi kullanarak, H (ton), S (doygunluk) ve L (ışık) değerlerini bul:
-        </p>
-        <div id="asked" style="width:auto;height:100px;border:1px solid #000;"></div>
-        <button class="button-purple" id=hsl_submit>Onayla</button>
-        <pre id="hsl_report"></pre>
-        <button class="button-purple" id="next_question" onclick="nextQuestion()" hidden>Sonraki Soru</button>
+<div class="parent">
+    <div class="wrap">
+        <div class="half picker">
+            <h2>Renk Seçici</h2>
+            <div class="colorPicker"></div>
+            <h3>HSL Tanımı:</h3>
+            <div id="values"></div>
+            <div id="out" style="width:80px;height:80px;border:1px solid #000;"></div>
+        </div>
+        <div class="half readout">
+            <p>
+                Soldaki Renk Seçiciyi kullanarak, H (ton), S (doygunluk) ve L (ışık) değerlerini bul:
+            </p>
+            <div id="asked" style="width:auto;height:100px;border:1px solid #000;"></div>
+            <button class="button-purple" id=hsl_submit>Onayla</button>
+            <pre id="hsl_report"></pre>
+            <button class="button-purple" id="next_question" onclick="nextQuestion()">Sonraki Soru</button>
+        </div>
     </div>
 </div>
 
+<button id="next_subject" class="button-background-move right" onclick="nextSubject()"><u>Sonraki Konu: Piksel Tanımı</u></button>
+
+
 <script>
+    function nextSubject() {
+        window.location.href = "pixelart.html";
+    }
+
     asked.style.backgroundColor = chroma.random();
     // Create a new color picker instance
     // https://iro.js.org/guide.html#getting-started

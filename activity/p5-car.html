@@ -52,19 +52,31 @@ function draw() {
 }
 
 
+
+
+
+
     </script>
+</div>
 
 
-    <div class='parent'>
-        <p class="card">
-            Peki, yukarıdaki tanımları nereden bulabilirim veya özelliklerini nasıl keşfedebilirim gibi soruları
-            soruyorsanız, cevapları nereden alabilirsiniz?
-            <br><br>
-            <a href="https://p5js.org/reference/">p5.js Referans</a> web sitesinde tüm komutların bir listesi var. Eğer
-            komutların üstüne tıklarsaniz, tüm detayları ve bazı örnek kullanımları görebilirsiniz.
-        </p>
+<p class="card">
+    Peki, yukarıdaki tanımları nereden bulabilirim veya özelliklerini nasıl keşfedebilirim gibi soruları
+    soruyorsanız, cevapları nereden alabilirsiniz?
+    <br><br>
+    <a href="https://p5js.org/reference/">p5.js Referans</a> web sitesinde tüm komutların bir listesi var. Eğer
+    komutların üstüne tıklarsaniz, tüm detayları ve bazı örnek kullanımları görebilirsiniz.
+</p>
 
 
-        <script src="../js/jquery.js"></script>
-        <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-        <script src="../js/prism.js" data-manual></script>
+<script src="../js/jquery.js"></script>
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script src="../js/prism.js" data-manual></script>
+<button id="next_subject" class="button-background-move right" onclick="nextSubject()"><u>Sonraki Konu: P5.js Programların Özeti</u></button>
+
+
+<script>
+    function nextSubject() {
+        window.location.href = "kartontop5.html";
+    }
+</script>
