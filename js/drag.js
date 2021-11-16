@@ -43,7 +43,14 @@
                 for (var i = 0; i<everyChild.length; i++) {
                     document.getElementById("console").innerHTML += everyChild[i].id + " - ";
                 }
-            });
+            }).on('remove', function (el) {
+            document.getElementById("console").innerHTML = "";
+            console.log(el.id);
+            var everyChild = document.querySelectorAll("#right-copy-1tomany div");
+            for (var i = 0; i<everyChild.length; i++) {
+                document.getElementById("console").innerHTML += everyChild[i].id + " - ";
+            }
+        });
 
         crossvent.add(sortable, 'click', clickHandler);
 

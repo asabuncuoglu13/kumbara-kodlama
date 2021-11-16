@@ -51,8 +51,12 @@
 
 <button id="next_subject" class="button-background-move right" onclick="nextSubject()"><u>Sonraki Konu: Kodlama ile Temel Şekiller</u></button>
 
+<button id="prev_subject" class="button-background-move left" onclick="prevSubject()"><u>Önceki Konu: Renk Tanımları</u></button>
 
 <script>
+    function prevSubject() {
+        window.location.href = "colors.html";
+    }
     function nextSubject() {
         window.location.href = "ordering.html";
     }

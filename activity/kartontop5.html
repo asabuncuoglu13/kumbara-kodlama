@@ -32,7 +32,6 @@
     tanımlanmış hızlı fonksiyonlar ile kodlamaya başlamanın kolay bir yoluydu. Kart-ON'dan kestiğin bloklar ile
     aşağıdaki gibi telefon kamerası yardımı ile programlar oluşturabiliyordun.
 </p>
-<img src="../img/p5js-beta.svg">
 <p>
     Burada olduğuna göre, yaratıcı kodlama konusunda bir adım daha ileri gitmek istedin. Yaratıcı kodlama için
     çeşitli programlama dilleri kullanabilirsin. Şu anda en çok kullanılan dillerden biri Processing. Processing
@@ -291,6 +290,14 @@ function mousePressed() {
     Yukarıdaki program, çalıştığında ortaya çıkan dairenin içine tıkladığında renk değiştirmesi için farenin elipsin
     merkezinden ne kadr uzakta olduğunu kontrol ediyor.
 </p>
+
+<button id="prev_subject" class="button-background-move left" onclick="prevSubject()"><u>Önceki Konu: Komut Sırası</u></button>
+
+<script>
+    function prevSubject() {
+        window.location.href = "ordering.html";
+    }
+</script>
 <script src="../js/jquery.js"></script>
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script src="../js/prism.js" data-manual></script>

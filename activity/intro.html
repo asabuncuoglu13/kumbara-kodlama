@@ -13,9 +13,10 @@
     <h1>Kodlama Nedir?</h1>
     <div class='parent'>
         <p>
-            Bugün heyecanlı bir öğrenme yolculuğuna çıkıyoruz! Senin için yaratıcı programlamanın temellerini öğreneceğin bir dizi içerik hazırladık. Temelden başlayıp, çok enteresan işler yapacağız. Örneğin, aşağıda fare imleci hızına göre fırça boyunu değiştirebilen programı yazacağız!
+            Bugün heyecanlı bir öğrenme yolculuğuna çıkıyoruz! Senin için yaratıcı programlamanın temellerini öğreneceğin ve farklı örneklerini keşfedebileceğin bir dizi içerik hazırladık. Örneğin, aşağıda fare imlecinin hızına göre fırça boyunu değiştirebilen program var. Eğer fare imlecini farklı hızlarda ekran üzerinde gezdirirsen, bu ekranı artistik bir tuval olarak kullanabilirsin.
         </p>
         <iframe src="https://preview.p5js.org/asabuncuoglu13/embed/IwWQSQkzz" width="100%" height="400px"></iframe>
+        <p>Bu ve benzeri programları kodlamaya başlamak istiyorsan, aşağıdaki "Sonraki" butonuna tıklayabilirsin.</p>
     </div>
 </div>
 
@@ -23,23 +24,30 @@
     <h1>Kodlama Komutları</h1>
 
     <div class='parent'>
-        <p>Bu çizimleri yapabilmek için bu süreçte iki farklı aracı kullanacağız. Bu araçlar, kodlarımızı oluştururken bilgisayara isteklerimizi aktarabilmemizi sağlayabilecek komutları içermektedir. Kullanacağımız ilk araç, Kart-ON, problem çözme adımlarımızın tasarımını kolaylaştıracak. Sonra da, web üzerinde çizim ve animasyon oluşturmamızı sağlayan p5.js kütüphanesini kullanarak arkadaşlarımıza gösterebileceğimiz çıktılar üreteceğiz.</p>
+        <p>Bu çizimleri yapabilmek için bu süreçte iki farklı aracı kullanacağız. Bu araçlar, kodlarımızı oluştururken bilgisayara isteklerimizi aktarabilmemizi sağlayabilecek komutları içermektedir. Kullanacağımız ilk araç, <a href="https://karton.ku.edu.tr" target="_blank">Kart-ON</a>, problem çözme adımlarımızın tasarımını kolaylaştıracak. Sonra da, web üzerinde çizim ve animasyon oluşturmamızı sağlayan <a href="https://p5js.org/" target="_blank">p5.js</a> kütüphanesini kullanarak arkadaşlarımıza gösterebileceğimiz çıktılar üreteceğiz.</p>
         <p>Kart-ON ile program oluştururken, komut bloklarını alt alta dizeriz. Şimdi ilk denememizi yapalım ve aşağıdaki iki komutu kodlama alanına sürükleyelim ve <b>Kontrol Et</b> butonuna tıklyalım.</p>
         <div class='wrapper'>
             <div id='left-copy-1tomany' class='container container-left'>
-                <div id="fill240"><img src="../media/doldur240.png" alt="doldur#240"></div>
-                <div id="rect"><img src="../media/dikdortgen.png" alt="dikdörtgen"></div>
+                Komutlar:
+                <div id="fill240"><img src="../img/doldur240.png" alt="doldur#240"></div>
+                <div id="rect"><img src="../img/dikdortgen.png" alt="dikdörtgen"></div>
             </div>
             <div id='right-copy-1tomany' class='container container-right'>
+                Kodlama Alanı:
             </div>
-            <div id='image-result' class='container'>
+            <div id='image-result' class='container' style="background-color: #F0F0F0; width: 90%; height: auto;">
+                Sonuç:
                 <img id="code1" src="../img/bluerect.png" hidden>
                 <img id="code2" src="../img/greyrect.png" hidden>
             </div>
-            <p id="console"></p>
+            <p id="console" hidden></p>
+        </div>
 
+        <div class="center">
             <button class="button-purple" onclick="checkResult()"><u>Kontrol Et</u></button>
         </div>
+        <p>Doldur ve Dikdörtgen komutlarını art arda dizdiğimizde mavi bir dikdörtgen görürüz. Dikdörtgen komutunu kodlama alanında tek başına bıraktığımızda ise gri bir dikdörtgen görürüz. </p>
+        <p>Doldur komutu kendinden sonra gelen şekillerin rengini belirler. Doldur komutuna verdiğimiz 240 girdisi ise rengin tonunu belirler. Kart-ON komutları renklerin HSL tanımını kullanır. HSL tanımını öğrenmek için bir sonraki sayfaya geçelim!</p>
     </div>
 </div>
 
@@ -72,6 +80,7 @@
         document.getElementById("2").hidden = true;
         document.getElementById("next").hidden = false;
         document.getElementById("prev").hidden = true;
+        document.getElementById("next_subject").hidden = true;
     }
 
     function next() {
@@ -82,8 +91,8 @@
         document.getElementById("next_subject").hidden = false;
     }
 
-    function nextSubject(){
-        window.location.href="colors.html";
+    function nextSubject() {
+        window.location.href = "colors.html";
     }
 </script>
 

@@ -72,9 +72,12 @@ function draw() {
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script src="../js/prism.js" data-manual></script>
 <button id="next_subject" class="button-background-move right" onclick="nextSubject()"><u>Sonraki Konu: P5.js Programların Özeti</u></button>
-
+<button id="prev_subject" class="button-background-move left" onclick="prevSubject()"><u>Önceki Konu: Komut Sırası</u></button>
 
 <script>
+    function prevSubject() {
+        window.location.href = "ordering.html";
+    }
     function nextSubject() {
         window.location.href = "kartontop5.html";
     }

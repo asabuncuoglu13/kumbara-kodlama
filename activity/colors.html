@@ -32,20 +32,23 @@
         </div>
         <div class="half readout">
             <p>
-                Soldaki Renk Seçiciyi kullanarak, H (ton), S (doygunluk) ve L (ışık) değerlerini bul:
+                Şimdi seninle ufak bir oyun oynayalım. Soldaki "Renk Seçici"yi kullanarak, doğru H (ton), S (doygunluk) ve L (ışık) değerlerini bulup, yukarıdaki rengi oluşturabilir misin?
             </p>
             <div id="asked" style="width:auto;height:100px;border:1px solid #000;"></div>
             <button class="button-purple" id=hsl_submit>Onayla</button>
             <pre id="hsl_report"></pre>
-            <button class="button-purple" id="next_question" onclick="nextQuestion()">Sonraki Soru</button>
+            <button class="button-purple" id="next_question" onclick="nextQuestion()" hidden>Sonraki Soru</button>
         </div>
     </div>
 </div>
 
 <button id="next_subject" class="button-background-move right" onclick="nextSubject()"><u>Sonraki Konu: Piksel Tanımı</u></button>
-
+<button id="prev_subject" class="button-background-move left" onclick="prevSubject()"><u>Önceki Konu: Kodlamaya Giriş</u></button>
 
 <script>
+    function prevSubject() {
+        window.location.href = "intro.html";
+    }
     function nextSubject() {
         window.location.href = "pixelart.html";
     }
@@ -109,14 +112,15 @@
         let message = "";
         if (x <= 50) {
             message = "Çok iyi! 🥇\n";
+            document.getElementById("next_question").hidden = false;
         } else if (x > 50 && x < 100) {
             message = "Daha iyisini yapabileceğini biliyorum!";
+            document.getElementById("next_question").hidden = false;
         } else {
             message = "Tekrar dene!";
         }
         console.log(x);
         document.getElementById(report_id).innerText = message;
-        document.getElementById("next_question").hidden = false;
     }
 
     function nextQuestion() {

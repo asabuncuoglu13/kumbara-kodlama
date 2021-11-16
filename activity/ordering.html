@@ -15,15 +15,17 @@
     </p>
     <div class='wrapper'>
         <div id='left-copy-1tomany' class='container container-left'>
-            <div id="fill240"><img src="../media/doldur240.png" alt="doldur#240"></div>
-            <div id="rect"><img src="../media/dikdortgen.png" alt="dikdörtgen"></div>
-            <div id="fill50"><img src="../media/doldur50.png" alt="doldur#50"></div>
-            <div id="elips"><img src="../media/elips.png" alt="elips"></div>
+            <div id="fill240"><img src="../img/doldur240.png" alt="doldur#240"></div>
+            <div id="rect"><img src="../img/dikdortgen.png" alt="dikdörtgen"></div>
+            <div id="fill50"><img src="../img/doldur50.png" alt="doldur#50"></div>
+            <div id="elips"><img src="../img/elips.png" alt="elips"></div>
         </div>
         <div id='right-copy-1tomany' class='container container-right'>
         </div>
-        <p id="console"></p>
+        <p id="console" hidden></p>
 
+    </div>
+    <div class="center">
         <button class="button-purple" onclick="checkResult()"><u>Kontrol Et</u></button>
     </div>
 
@@ -41,6 +43,7 @@
         fill(240, 100, 100);
         ellipse(100, 100, 50, 50);
     }
+
         </script>
 
         <p>Şimdi yukarıdaki kodu önde sarı bir elips, arkada ise mavi bir dikdörtgen olacak şekilde değiştirmeye çalış!</p>
@@ -48,14 +51,21 @@
 
 </div>
 
+
+<button id="prev_subject" class="button-background-move left" onclick="prevSubject()"><u>Önceki Konu: Pikseller</u></button>
 <button id="next_subject" class="button-background-move right" onclick="nextSubject()"><u>Sonraki Konu: Kodlama ile Araba Çizimi</u></button>
 
 <script src='../js/dragula.js'></script>
 <script src="../js/drag.js"></script>
 <script>
+    function prevSubject() {
+        window.location.href = "pixelart.html";
+    }
+
     function nextSubject() {
         window.location.href = "p5-car.html";
     }
+
     function checkResult() {
         var text = document.getElementById("console").innerText;
         if (text.includes("fill240 - rect - fill50 - elips")) {
