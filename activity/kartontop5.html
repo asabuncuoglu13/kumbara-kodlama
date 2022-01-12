@@ -22,8 +22,6 @@
     <li><a href="#logic">Koşul ve Mantık Yapıları</a>
     <li><a href="#function">Fonksiyon Tanımlama</a>
     <li><a href="#loops">Döngü Yapıları</a>
-    <li><a href="#ball">Hikaye Anlatımı</a>
-    <li><a href="#further">Sonrası</a>
 </ol>
 
 <h2 id="karton">Kart-ON Neydi?</h2>
@@ -290,6 +288,26 @@ function mousePressed() {
     Yukarıdaki program, çalıştığında ortaya çıkan dairenin içine tıkladığında renk değiştirmesi için farenin elipsin
     merkezinden ne kadr uzakta olduğunu kontrol ediyor.
 </p>
+
+<h2 id="loops">Döngü Yapısı</h2>
+
+<p>
+    For loop içinde belirlediğin değişkenin değerini artırarak veya azaltarak, <b>loop</b> içindeki kodun kaç kere çalışacağını belirleyebilirsin.
+</p>
+
+<script type="text/p5" data-autoplay data-preview-width="500" data-height="600">
+function setup() {
+    createCanvas(300, 300);
+}
+
+function draw() {
+    background(100);
+
+    for (let c = 75; c <= 225; c += 75) {
+        ellipse(c, c, 150, 150);
+    }
+}
+</script>
 
 <button id="prev_subject" class="button-background-move left" onclick="prevSubject()"><u>Önceki Konu: Komut Sırası</u></button>
 
