@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
-     <title>Kart-ON ile Kodlama</title>
-    <link href='../style/dragula.css' rel='stylesheet' type='text/css'/>
-    <link rel="stylesheet" href="../style/prism.css">
-    <link rel="stylesheet" href="../style/index.css">
+    <title>Kart-ON ile Kodlama</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='./style/dragula.css' rel='stylesheet' type='text/css'/>
+    <link href='./style/index.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -29,16 +29,16 @@
         <div class='wrapper'>
             <div id='left-copy-1tomany' class='container container-left'>
                 Komutlar:
-                <div id="fill240"><img src="../img/doldur240.png" alt="doldur#240"></div>
-                <div id="rect"><img src="../img/dikdortgen.png" alt="dikdörtgen"></div>
+                <div id="fill240"><img src="./img/doldur240.png" alt="doldur#240"></div>
+                <div id="rect"><img src="./img/dikdortgen.png" alt="dikdörtgen"></div>
             </div>
             <div id='right-copy-1tomany' class='container container-right'>
                 Kodlama Alanı:
             </div>
             <div id='image-result' class='container' style="background-color: #F0F0F0; width: 90%; height: auto;">
                 Sonuç:
-                <img id="code1" src="../img/bluerect.png" hidden>
-                <img id="code2" src="../img/greyrect.png" hidden>
+                <img id="code1" src="./img/bluerect.png" hidden>
+                <img id="code2" src="./img/greyrect.png" hidden>
             </div>
             <p id="console" hidden></p>
         </div>
@@ -46,7 +46,7 @@
         <div class="center">
             <button class="button-purple" onclick="checkResult()"><u>Kontrol Et</u></button>
         </div>
-        <p><i>Doldur</i> ve <i>Dikdörtgen</i> komutlarını art arda dizdiğimizde mavi bir dikdörtgen görürüz. <i>Doldur</i> komutunu <b>Kodlama Alanı</b> dışına sürükleyip, silerek, <i>Dikdörtgen</i> komutunu kodlama alanında tek başına bıraktığımızda ise gri bir dikdörtgen görürüz.  </p>
+        <p><i>Doldur</i> ve <i>Dikdörtgen</i> komutlarını art arda dizdiğimizde mavi bir dikdörtgen görürüz. <i>Doldur</i> komutunu <b>Kodlama Alanı</b> dışına sürükleyip, silerek, <i>Dikdörtgen</i> komutunu kodlama alanında tek başına bıraktığımızda ise gri bir dikdörtgen görürüz. </p>
         <p><i>Doldur</i> komutu kendinden sonra gelen şekillerin rengini belirler. <i>Doldur</i> komutuna verdiğimiz 240 girdisi ise rengin tonunu belirler. Kart-ON komutları renklerin HSL tanımını kullanır. HSL tanımını öğrenmek için bir sonraki sayfaya geçelim!</p>
     </div>
 </div>
@@ -55,8 +55,8 @@
 <button id="next" class="button-background-move right" onclick="next()"><u>Sonraki ></u></button>
 <button id="next_subject" class="button-background-move right" onclick="nextSubject()" hidden><u>Sonraki Konu: Renk Tanımları</u></button>
 
-<script src='../js/dragula.js'></script>
-<script src="../js/drag.js"></script>
+<script src='./js/dragula.js'></script>
+<script src="./js/drag.js"></script>
 <script>
     function checkResult() {
         var text = document.getElementById("console").innerText;
@@ -92,12 +92,10 @@
     }
 
     function nextSubject() {
-        window.location.href = "colors.html";
+        window.location.href = "../2/index.html";
     }
 </script>
 
-<script src="../js/jquery.js"></script>
-<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<script src="../js/prism.js" data-manual></script>
+<script src="./js/jquery.js"></script>
 </body>
 </html>

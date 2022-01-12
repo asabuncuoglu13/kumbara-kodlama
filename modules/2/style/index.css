@@ -100,8 +100,15 @@ img {
     padding: 20px;
 }
 
+/* dragula-specific example page styles */
+.wrapper {
+    display: grid;
+    grid-template-columns: 30% 30% 40%;
+    justify-content: center;
+}
+
 .container {
-    padding: 0 5px;
+    padding: 0 25px 25px 25px;
     max-width: 1000px;
     margin: 10px auto;
 }
@@ -121,8 +128,8 @@ img {
 
 .container > div,
 .gu-mirror {
-    margin: 3px;
-    padding: 2px;
+    margin: 10px;
+    padding: 10px;
     background-color: rgba(0, 0, 0, 0.2);
     transition: opacity 0.4s ease-in-out;
 }
@@ -258,12 +265,6 @@ img {
         padding: 14px;
     }
 
-    .wrapper {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        justify-content: center;
-    }
-
 }
 
 
@@ -289,13 +290,6 @@ img {
         padding: 14px;
     }
 
-    /* dragula-specific example page styles */
-    .wrapper {
-        display: grid;
-        grid-template-columns: 30% 30% 40%;
-        justify-content: center;
-    }
-
 }
 
 @media  (min-device-width: 780px) {
@@ -317,13 +311,6 @@ img {
     .wrap .half {
         width: 50%;
         padding: 14px;
-    }
-
-    /* dragula-specific example page styles */
-    .wrapper {
-        display: grid;
-        grid-template-columns: 30% 30% 40%;
-        justify-content: center;
     }
 
 }
