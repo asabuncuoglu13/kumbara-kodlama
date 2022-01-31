@@ -8,19 +8,34 @@
     <link rel="stylesheet" href="../style/index.css">
 </head>
 <body>
-<h2>Kodlamada Komut Sırası</h2>
+<h2>Kart-ON’a Detaylı Bir Bakış</h2>
 <div class='parent'>
+    <p>
+        Kart-ON kod bloklarını “Blok” alanından “Kodlama” alanına sürükleyerek algoritmanı oluşturabilirsin.
+    </p>
+
+    <p class="card">
+        <span><b>Algoritma vs Kodlama: </b></span>
+        Algoritma, bilgisayarlı veya bilgisayarsız bir şekilde, bir problemi çözmek içiin oluşturduğun iyi tanımlanmış yönergelerdir. Kodlama, bu oluşturduğun algoritmanın Kart-ON veya p5.js gibi diller ve kütüphaneler ile bilgisayarlara aktarılmasıdır.
+    </p>
+
     <p>
         Kodlama ile çizim yaparken belirlediğimiz komut sırası şekillerin özelliklerini ve görünümünü belirler. Örneğin, önde bir mavi elips, onun arkasında da mavi bir dikdörtgen çizmek için aşağıdaki gibi bir kod oluşturabiliriz. Şimdi komut sırasını bozmadan soldaki kutucuktaki komut bloklarını teker teker sağdaki boş kutucuğa taşı. Ardından da <u>Kontrol Et</u> butonuna tıkla.
     </p>
     <div class='wrapper'>
         <div id='left-copy-1tomany' class='container container-left'>
+            Bloklar:
             <div id="fill240"><img src="../img/doldur240.png" alt="doldur#240"></div>
             <div id="rect"><img src="../img/dikdortgen.png" alt="dikdörtgen"></div>
             <div id="fill50"><img src="../img/doldur50.png" alt="doldur#50"></div>
             <div id="elips"><img src="../img/elips.png" alt="elips"></div>
         </div>
         <div id='right-copy-1tomany' class='container container-right'>
+            Kodlama:
+        </div>
+        <div id='image-result' class='container' style="background-color: #F0F0F0; width: 90%; height: auto;">
+            Sonuç:
+            <img id="code-res" src="../img/yellow-rect-blue-circle.png" hidden>
         </div>
         <p id="console" hidden></p>
 
@@ -30,7 +45,7 @@
     </div>
 
     <div id="code" hidden>
-        <p>Evet! Bu sıra ile komutları çalıştırdığında oluşacak p5.js kodu aşağıdaki gibi gözükecektir. Şimdi "Play" butonuna tıklayarak bu kodun çıktısını görebilirsin:</p>
+        <p>Evet! Bu sıra ile komutları çalıştırdığında sarı bir dikdörtgenin üzerinde mavi bir daire göreceksin. Bu kodun p5.js ile yazılmış versiyonu ise aşağıdaki gibi gözükecektir. Şimdi "Play" butonuna tıklayarak bu kodun çıktısını görebilirsin:</p>
         <script type="text/p5" data-autoplay data-preview-width="320" data-height="400">
     function setup() {
         createCanvas(300, 300);
@@ -46,7 +61,7 @@
 
         </script>
 
-        <p>Şimdi yukarıdaki kodu önde sarı bir elips, arkada ise mavi bir dikdörtgen olacak şekilde değiştirmeye çalış!</p>
+        <p>Sonraki konularda, bu kodu nasıl düzenleyeceğini ve yeni şekiller ekleyeceğini hep beraber keşfedeceğiz.</p>
     </div>
 
 </div>
@@ -70,6 +85,7 @@
         var text = document.getElementById("console").innerText;
         if (text.includes("fill240 - rect - fill50 - elips")) {
             document.getElementById("code").hidden = false;
+            document.getElementById("code-res").hidden = false;
         }
     }
 </script>

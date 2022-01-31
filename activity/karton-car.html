@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kart-ON ile Kodlama</title>
+    <link href='../style/dragula.css' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="../style/prism.css">
+    <link rel="stylesheet" href="../style/index.css">
+
+    <script src="../js/p5/p5.min.js"></script>
+    <script src="../js/fuse.js"></script>
+    <script src="../js/p5/p5.play.js"></script>
+    <script src="../js/p5/codeP5.js"></script>
+    <script src="../js/p5/code.js"></script>
+    <script src="../js/p5/interpreter.js"></script>
+</head>
+<body>
+
+<script>
+    if (!String.prototype.format) {
+        String.prototype.format = function () {
+            var args = arguments;
+            return this.replace(/{(\d+)}/g, function (match, number) {
+                return typeof args[number] !== 'undefined' ? args[number] : match;
+            });
+        };
+    }
+</script>
+
+<div>
+    <h1>Kart-ON ile Araba Çizimi</h1>
+
+    <div class='parent'>
+
+        <p>Çok basit bir araba çizimi ile başlayacağız. Sadece üç tane şekil kullanacağız:</p>
+        <ol>
+            <li>Gövde için bir dikdörtgen</li>
+            <li>Ön teker için bir daire</li>
+            <li>Arka teker için bir daire daha</li>
+        </ol>
+        <p>Tekerlerimin mavi olmasını, gövdenin de turuncu olmasını istiyorum. Son durumda, arabamız aşağıdaki gibi gözüksün:</p>
+        <img src="../img/araba.png" class="center-mid" style="max-width: 540px;">
+        <p>Buna benzer bir çizimi kodlamak için aşağıdaki gibi bir çözüm oluşturuyorum:</p>
+        <ol>
+            <li>Doldur komutu ile mavi rengi oluşturmak için “220” ton değerini giriyorum.</li>
+            <li>İlk elipsimin orta noktası yatay eksende 100 birim, dikey eksende de 200 birim ilerlediğimizde gördüğümüz nokta olacak.</li>
+            <li>İkinci elipsim için yatay eksende 250 birim ilerleyeceğiz. Dikey eksen aynı kalacak.</li>
+            <li>Fark ettiyseniz, ikinci elipsim için doldur komutunu kullanmadım. Çünkü, yeni bir doldur komutu gelene kadar, tüm şekiller, kendinden önce belirtilen rengi uygular.</li>
+            <li>Şimdi turuncu bir dikdörtgen çizeceğim için doldur komutunu kullanabilirim. Turuncu renk için ton değerimi 40’a ayarlıyorum.</li>
+            <li>Dikdörtgenin sol üst köşesini x=50, y=50 noktasında başlatıyorum ve genişliği 300, yüksekliği 150 birimlik bir dikdörtgen çiziyorum.</li>
+        </ol>
+
+    </div>
+
+
+    <h2>İlk dikdörtgeni çizelim:</h2>
+    <div class='parent' >
+        <div class="title-container">
+            <div>Bloklar</div>
+            <div>Kod</div>
+            <div>Sonuç</div>
+        </div>
+        <div class="button-container">
+            <div></div>
+            <div>
+                <button onclick="clearArea()">temizle</button>
+            </div>
+            <div>
+                <button onclick="runCommandArray()">çalıştır</button>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div id='left-copy-1tomany' class='container container-left' style="height: 360px; overflow-y: scroll;">
+            </div>
+            <div id='right-copy-1tomany' class='container container-right' style="height: 360px; overflow-y: scroll;">
+            </div>
+            <div >
+                <div id="myContainer" style="min-width: 360px" width="100%" height="320px"></div>
+                <p id="console" style="cursor: pointer" onclick="copyElementText()"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        initInterpreter();
+        let codeP5 = new CodeP5();
+        codeP5.runActivity();
+
+        const colorCodes = {
+            color: "#EEF6E8",
+            attr: "#FFFCEB",
+            shape: "#EEFAFF",
+            variable: "#F4E9F4",
+            control: "#F2E9E9",
+            call: "#F2E9E9",
+            cond: "#F2E9E9",
+            loop: "#F2E9E9",
+            end: "#F2E9E9"
+        }
+
+        function copyElementText() {
+            var text = document.getElementById("console").innerText;
+            var elem = document.createElement("textarea");
+            document.body.appendChild(elem);
+            elem.value = text;
+            elem.select();
+            document.execCommand("copy");
+            document.body.removeChild(elem);
+        }
+
+        for (var i = 0; i < codeList.length; i++) {
+            var inputArea = "";
+            if (codeList[i].no_in > 0)
+                for (var j = 0; j < codeList[i].no_in; j++)
+                    inputArea += '<input type="text">\n';
+
+            document.getElementById("left-copy-1tomany").innerHTML +=
+                '<div class="coding-card" style="background: ' + colorCodes[codeList[i].input] + '">\n' +
+                '<label>' + codeList[i].title + '</label>\n' +
+                inputArea +
+                '</div>';
+        }
+
+
+        function clearArea() {
+            document.getElementById("right-copy-1tomany").innerHTML = "";
+        }
+    </script>
+
+    <button id="prev" class="button-background-move left" onclick="prevSubject()"><u>< Önceki Konu: Giriş</u></button>
+    <button id="next_subject" class="button-background-move right" onclick="nextSubject()"><u>Sonraki Konu: Renk Tanımları</u></button>
+
+    <script src='../js/dragula.js'></script>
+    <script src="../js/drag.js"></script>
+    <script>
+        function checkResult() {
+            var text = document.getElementById("console").innerText;
+            if (text.includes("fill240 - rect")) {
+                document.getElementById("code1").hidden = false;
+                document.getElementById("code2").hidden = true;
+            } else if (text.includes("rect - fill240")) {
+                document.getElementById("code1").hidden = true;
+                document.getElementById("code2").hidden = false;
+            } else if (!text.includes("fill240") && text.includes("rect")) {
+                document.getElementById("code1").hidden = true;
+                document.getElementById("code2").hidden = false;
+            } else {
+                document.getElementById("code1").hidden = true;
+                document.getElementById("code2").hidden = true;
+            }
+        }
+
+        function prevSubject() {
+            window.location.href = "intro-karton.html";
+        }
+
+        function nextSubject() {
+            window.location.href = "p5-car.html";
+        }
+    </script>
+
+    <script src="../js/jquery.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <script src="../js/prism.js" data-manual></script>
+</body>
+</html>

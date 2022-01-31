@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kart-ON ile Kodlama</title>
+    <link href='../style/dragula.css' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="../style/prism.css">
+    <link rel="stylesheet" href="../style/index.css">
+</head>
+<body>
+
+<div>
+    <h1>Kodlama Komutları</h1>
+
+    <div class='parent'>
+        <p>Bir bilgisayara çizim yaptırmak istersek, bu çizimi hangi renklerle yapacağımızı, hangi şekli nereye çizeceğimizi, bu çizimlerin hangisinin daha önde, hangisinin daha arkada olacağını belirtmemiz gerekir.</p>
+        <p class="card">
+            <span><b>Neden Çizim Yaparız?</b></span>
+            <span>Bir bilgisayara çizim yaptırmak istersek, bu çizimi hangi renklerle yapacağımızı, hangi şekli nereye çizeceğimizi, bu çizimlerin hangisinin daha önde, hangisinin daha arkada olacağını belirtmemiz gerekir. </span>
+        </p>
+        <p>Bu çizimleri yapabilmek için bu süreçte iki farklı aracı kullanacağız. Bu araçlar, kodlarımızı oluştururken bilgisayara isteklerimizi aktarabilmemizi sağlayabilecek komutları içermektedir.
+        <ol>
+            <li>Kullanacağımız ilk araç, <a href="https://karton.ku.edu.tr" target="_blank">Kart-ON</a>, problem çözme adımlarımızın tasarımını kolaylaştıracak. Çözüm adımlarımızı Kart-ON ile belirledikten sonra, internette arkadaşların ile paylaşabileceğin çizim ve animasyon oluşturmamızı sağlayacak ikinci programa geçeceğiz.</li>
+            <li><a href="https://p5js.org/" target="_blank">p5.js</a> kütüphanesini kullanarak tüm dünyaya yaratıcı çıktılarımızı gösterebileceğimiz programlar üreteceğiz. Bu kütüphane ile neler yapabileceğini göreceğin bir seçkiyi burada görebilirsin.</li>
+        </ol>
+        </p>
+        <p>Kart-ON ile program oluştururken, komut bloklarını <b>Kodlama Alanı</b> içerisinde alt alta dizeriz. Şimdi ilk denememizi yapalım ve <b>Komutlar</b> alanında gördüğün aşağıdaki iki komutu kodlama alanına sürükleyelim. Ardından, <b>Sonucu Gör</b> butonuna tıklyalım.</p>
+        <div class='wrapper'>
+            <div id='left-copy-1tomany' class='container container-left'>
+                Komutlar:
+                <div id="fill240"><img src="../img/doldur240.png" alt="doldur#240"></div>
+                <div id="rect"><img src="../img/dikdortgen.png" alt="dikdörtgen"></div>
+            </div>
+            <div id='right-copy-1tomany' class='container container-right'>
+                Kodlama Alanı:
+            </div>
+            <div id='image-result' class='container' style="background-color: #F0F0F0; width: 90%; height: auto;">
+                Sonuç:
+                <img id="code1" src="../img/bluerect.png" hidden>
+                <img id="code2" src="../img/greyrect.png" hidden>
+            </div>
+            <p id="console" hidden></p>
+        </div>
+
+        <div class="center">
+            <button class="button-purple" onclick="checkResult()"><u>Sonucu Gör</u></button>
+        </div>
+        <p><i>Doldur</i> ve <i>Dikdörtgen</i> komutlarını art arda dizdiğimizde mavi bir dikdörtgen görürüz. <i>Doldur</i> komutunu <b>Kodlama Alanı</b> dışına sürükleyip, silerek, <i>Dikdörtgen</i> komutunu kodlama alanında tek başına bıraktığımızda ise gri bir dikdörtgen görürüz. </p>
+        <p><i>Doldur</i> komutu kendinden sonra gelen şekillerin rengini belirler. <i>Doldur</i> komutuna verdiğimiz 240 girdisi ise rengin tonunu belirler. Kart-ON komutları renklerin HSL tanımını kullanır. HSL tanımını öğrenmek için bir sonraki sayfaya geçelim!</p>
+    </div>
+</div>
+
+<button id="prev" class="button-background-move left" onclick="prevSubject()"><u>< Önceki Konu: Giriş</u></button>
+<button id="next_subject" class="button-background-move right" onclick="nextSubject()"><u>Sonraki Konu: Renk Tanımları</u></button>
+
+<script src='../js/dragula.js'></script>
+<script src="../js/drag.js"></script>
+<script>
+    function checkResult() {
+        var text = document.getElementById("console").innerText;
+        if (text.includes("fill240 - rect")) {
+            document.getElementById("code1").hidden = false;
+            document.getElementById("code2").hidden = true;
+        } else if (text.includes("rect - fill240")) {
+            document.getElementById("code1").hidden = true;
+            document.getElementById("code2").hidden = false;
+        } else if (!text.includes("fill240") && text.includes("rect")) {
+            document.getElementById("code1").hidden = true;
+            document.getElementById("code2").hidden = false;
+        } else {
+            document.getElementById("code1").hidden = true;
+            document.getElementById("code2").hidden = true;
+        }
+    }
+
+    function prevSubject() {
+        window.location.href = "intro.html";
+    }
+
+    function nextSubject() {
+        window.location.href = "colors.html";
+    }
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script src="../js/prism.js" data-manual></script>
+</body>
+</html>
