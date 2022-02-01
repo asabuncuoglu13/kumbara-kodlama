@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <title>Kart-ON Renkler</title>
     <link rel="stylesheet" href="../style/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -53,12 +54,13 @@
 </div>
 
 <button id="next_subject" class="button-background-move right" onclick="nextSubject()"><u>Sonraki Konu: Piksel Tanımı</u></button>
-<button id="prev_subject" class="button-background-move left" onclick="prevSubject()"><u>Önceki Konu: Kodlamaya Giriş</u></button>
+<button id="prev_subject" class="button-background-move left" onclick="prevSubject()"><u>Önceki Konu: Kodlamaya Komutları</u></button>
 
 <script>
     var i = 1;
+
     function prevSubject() {
-        window.location.href = "intro.html";
+        window.location.href = "commands.html";
     }
 
     function nextSubject() {

@@ -68,7 +68,6 @@
             if (target === sortable) {
                 return;
             }
-            openBlockDetails(target.id);
         }
 
         function $(id) {
