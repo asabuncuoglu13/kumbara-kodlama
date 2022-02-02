@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<meta name="viewport" content="width=1000, initial-scale=1">
-<link rel="stylesheet" href="../style/prism.css">
-<link rel="stylesheet" href="../style/index.css">
-<title>Kart-ON ve p5</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="../style/prism.css">
+    <link rel="stylesheet" href="../style/index.css">
+    <title>Kart-ON ve p5</title>
+</head>
 
-<h1>P5.js ile Çizim Kodlama</h1>
+<body>
+<h1>P5.js ile Araba Çizelim</h1>
 
 <div class='parent'>
-    <p> Çizim yapmak, düşüncelerimizi etkili bir şekilde aktarmak için doğal bir yöntemdir. Çizim yaparken hem eğleniriz hem de fikirlerimizi hızlıca görselleştirebiliriz. Bu iletişim biçimindeki en temel hedef, kısa sürede birçok fikri keşfedebilmektir. O zaman bir çizimi kodlama yaparak ifade edebilirsek, dünyadaki sayısız insana düşüncelerimizi dinamik bir biçimde aktarabiliriz!
-    </p>
-
-    <p> Bu seride, çizim ve animasyonlarımızı kodlamak için p5.js adında bir kodlama kütüphanesini kullanacağız. Bu çizim kütüphanesinin yirmi yıllık bir tarihi ve birbiri ile yardımlaşmayı çok seven bir kullanıcı topluluğu var. Yaklaşık yirmi sene önce, hızlı bir şekilde çizim, animasyon ve diğer görsel sanat ürünlerini kodlayabilmek için geliştirilen bu dil ile birçok dijital eser yaratıldı. Seri içinde bu örneklerden bazılarını da seninle paylaşacağız. Serinin bu ilk örneğinde ise, bir p5.js kodunun neye benzediğini göreceğiz.
+    <p> Benzer işlemleri p5.js kütüphanesi ile gerçekleştirerek, linkini kolayca paylaşabileceğimiz tasarımlar yapabiliriz. Bu çizim kütüphanesinin yirmi yıllık bir tarihi ve birbiri ile yardımlaşmayı çok seven bir kullanıcı topluluğu var. Yaklaşık yirmi sene önce, hızlı bir şekilde çizim, animasyon ve diğer görsel sanat ürünlerini kodlayabilmek için geliştirilen bu dil ile birçok dijital eser yaratıldı. Seri içinde bu örneklerden bazılarını da seninle paylaşacağız. Serinin bu ilk örneğinde ise, bir p5.js kodunun neye benzediğini göreceğiz.
     </p>
 </div>
+
 <h2 id="quick-start">p5.js kod yapısı</h2>
 
 <div class='parent'>
@@ -27,7 +28,30 @@
 <div class='parent'>
     <img src="../img/1.png">
 
-    <p>p5.js ile çalışırken, bir Javascript kodu yazdığını bilmen gerekiyor. Yani, Javascript'in temel dil kuralları burada da geçerli. Örneğin fonksiyonlar içinde yazdığın kodlar <b>{ }</b> sembolleri arasında olmalıdır, fonksiyonlardan sonra <b>;</b> işareti konulmalıdır. Ayrıca Javascript büyük harfe ve küçük harfe duyarlıdır. Tüm bu kuralları serimiz içinde tekrar ederek daha iyi anlayacak ve hatırlayacaksın.</p>
+    <p>p5.js ile çalışırken, bir Javascript kodu yazdığını bilmen gerekiyor. Yani, Javascript'in temel dil kuralları burada da geçerli.</p>
+
+    <p>Peki, Javascript nedir?</p>
+
+    <p class="card">
+        Javascript, web sayfalarında gerçekleşecek bir işlemi programlamanı sağlayan programlama dilidir.
+    </p>
+
+    P5.js, bu dili kullanır. Eğer, p5.js ile çizimler yapmak istiyorsan, bu dilin kurallarına uymamız gerekir. Bu dilin kurallarını zamanla öğreneceğiz. Ama bazı kuralları aşağıdaki gibi listeyebiliriz:
+    <ul>
+        <li>Bir komutu çağırırken, yanına ( ) işaretlerini koyarız. Bu parantezlerin arasına bir girdi veriyorsak, bu komutun o girdiyi kullanacağını söyleriz.</li>
+        <p class="card">
+            Örnekler:<br>
+            → fill(240, 100, 100) // Doldur komutunun karşılığıdır. HSL renk tanımına göre girdilerini alır.<br>
+            → rect(80, 40, 50, 100) //dikdörtgen, boyut ve konum komutlarını tek bir fonksiyonda birleştirir.<br>
+        </p>
+        <li>Dilin fonksiyonlar içinde yazdığın kodlar { } sembolleri arasında olmalıdır.</li>
+        <li>Her bir komutu çağırdıktan sonra ; işareti konulmalıdır.</li>
+        <li>Javascript büyük harfe ve küçük harfe duyarlıdır.</li>
+        <li>Eğer program içine çalıştırılmasını istemediğin bir yorum eklemek istersen, // başına koyarak satır boyunca yorumunu yazabilirsin.</li>
+        <li>Tüm bu kuralları serimiz içinde tekrar ederek daha iyi anlayacak ve hatırlayacaksın.</li>
+    </ul>
+
+    Araba çizimi sırasında, beş temel p5.js fonksiyonunu kullanacağız:
 
     <ol>
         <li><b>createCanvas()</b> komutuna girdi olarak başlatmak istediğin ekranın genişlik ve yüksekliğini vermen gerekir.</li>
@@ -50,6 +74,7 @@ function draw() {
   ellipse(40, 135, 30, 30);
   ellipse(120, 135, 30, 30);
 }
+
     </script>
 </div>
 
@@ -66,7 +91,7 @@ function draw() {
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script src="../js/prism.js" data-manual></script>
 <button id="next_subject" class="button-background-move right" onclick="nextSubject()"><u>Sonraki Konu: P5.js Programların Özeti</u></button>
-<button id="prev_subject" class="button-background-move left" onclick="prevSubject()"><u>Önceki Konu: Komut Sırası</u></button>
+<button id="prev_subject" class="button-background-move left" onclick="prevSubject()"><u>Önceki Konu: Kart-On ile Araba Çizimi</u></button>
 
 <script>
     function prevSubject() {
@@ -77,3 +102,4 @@ function draw() {
         window.location.href = "kartontop5.html";
     }
 </script>
+</body>

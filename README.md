@@ -10,5 +10,5 @@ _Türkiye İş Bankası Kumbara Dergisi için hazırlanan kodlama içeriklerinin
 4. [🔲 Pikseller](./activity/pixelart.html)
 5. [🧩 Kart-ON'a Daha Detaylı Bakış](./activity/intro-karton.html)
 6. [🚗 Kart-ON ile Araba Çizimi](./activity/karton-car.html)
-7. [🚙p5.js ile Araba Çizimi](./activity/p5-car.html)
+7. [🚙 p5.js ile Araba Çizimi](./activity/p5-car.html)
 8. [🏁 Programlama Konseptleri Özet: Farklı P5 Örnekleri](./activity/kartontop5.html)
