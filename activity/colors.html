@@ -20,17 +20,17 @@
 <h1>Kodlamada Renklerin Kullanımı</h1>
 
 <div class='parent'>
-    <p>Kodlama ile çizim ve animasyon oluşturacaksak, bilgisayarlara hangi renk ile çalışacağımızı bir şekilde tanımlamamız gerekir. Peki, renkleri bilgisayarların anlayabileceği şekilde nasıl tanımlayabiliriz? </p>
-    <p> Öncelikle bilgisayarların kapasitesini hatırlayalım. Her ne kadar, videolar izlerken, oyunlar oynarken veya ödevlerimiz için farklı kaynakları araştırırken unutsak da, bilgisayarlar sadece sayılar ile işlem yapabilen çok gelişmiş hesap makineleridir. Bu nedenle, bir rengi bilgisayara tanımlamak istiyorsak, o rengin matematiksel tanımını oluşturmamız gerekir. Bunun için kodlamada kullanılan tanımlardan birisi HSL renk tanımıdır.</p>
+    <p>Kodlama ile çizim ve animasyon oluşturacaksak, bilgisayarlara hangi renk ile çalışacağımızı bir şekilde tanımlamamız gerekir. Peki, renkleri bilgisayarların anlayabileceği şekilde nasıl tanımlayabiliriz?</p>
+    <p> Öncelikle bilgisayarların gelişmiş birer hesap makinesi olduklarını hatırlayalım. Her ne kadar, videolar izlerken, oyunlar oynarken veya ödevlerimiz için farklı kaynakları araştırırken unutsak da, bilgisayarlar sadece sayılar ile işlem yapabilen çok gelişmiş hesap makineleridir. Bu nedenle, bir rengi bilgisayara tanımlamak istiyorsak, o rengin matematiksel tanımını oluşturmamız gerekir. Bunun için kodlamada kullanılan tanımlardan birisi HSL renk tanımıdır.</p>
     <p><b>HSL: Hue (ton), Saturation (Doygunluk), Light (ışık)</b></p>
     <p> Bu renk tanımında, görebildiğimiz tüm renk tonlarını bir dairenin içine koyup, her bir rengi bu dairedeki konumuna göre ifade ederiz. Dairenin 360 derece dönen yüzeyinde renklerin farklı tonlarını bulursun. Dairenin merkezinden dışa doğru ilerledikçe renkler giderek doygunlaşır. Parlaklığı da bu daireye eklenecek bir eksende temsil ederek, doğada görebildiğimiz tüm renkleri temsil edebilirsin.
-    </p>
 </div>
 
 <div class="parent">
+    <h2>Renk Seçici</h2>
+    <p> Aşağıdaki renk dairesi ve altındaki ışık miktarı seçim çubuğundaki noktaları hareket ettirerek, farklı renk tanımlarının HSL değerlerini görebilirsin. </p>
     <div class="wrap">
         <div class="half">
-            <h2>Renk Seçici</h2>
             <div class="colorPicker"></div>
             <h3>HSL Tanımı:</h3>
             <div id="values"></div>
@@ -42,12 +42,12 @@
             <span id="star2" class="fa fa-star"></span>
             <span id="star3" class="fa fa-star"></span>
             <span id="star4" class="fa fa-star"></span>
-            <p class="standard"> Şimdi seninle ufak bir oyun oynayalım. "Renk Seçici"yi kullanarak, doğru H (ton), S (doygunluk) ve L (ışık) değerlerini bulup, aşağıdaki rengi oluşturabilir misin?
+            <p class="standard"> Şimdi seninle ufak bir oyun oynayalım. "Renk Seçici"yi kullanarak, doğru H (ton), S (doygunluk) ve L (ışık) değerlerini bulup, aşağıdaki rengi oluşturabilir misin? Doğru HSL tanımını bulduktan sonra "ONAYLA" butonuna basabilirsin.
             </p>
             <div id="asked" style="width:auto;height:100px;border:1px solid #000;"></div>
             <button class="button-purple" id=hsl_submit>Onayla</button>
             <pre id="hsl_report"></pre>
-            <button class="button-purple" id="next_question" onclick="nextQuestion()" hidden>Sonraki Soru</button>
+            <button class="button-purple" id="next_question" onclick="nextQuestion()" hidden>Yeni Renk Getir</button>
         </div>
     </div>
 </div>
