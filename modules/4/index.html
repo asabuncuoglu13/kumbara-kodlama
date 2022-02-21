@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <title>Kart-ON Pikseller</title>
+    <!--<link rel="stylesheet" href="../style/index.css">-->
+    <style>
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+            min-width: 480px;
+            min-height: 480px;
+        }
+
+        tr {
+            height: 10%;
+        }
+
+        td {
+            width: 10%;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Pikselleri Dolduralım</h1>
+
+<div class="parent">
+    <p> Pikseller, dijital görüntülerde, bir renk ile dolu en küçük karedir. Pikseller, gözlerimiz ile gördüğümüz dünyayı, sınırlı renk ve sınırlı yüzeye aktarmak için bizim oluşturduğumuz bir birimdir. Nasıl mı? Dışaırda bir ördek gördük diyelim. </p>
+
+    <div class="wrap">
+        <img src="./img/duck.jpg" class="half">
+        <img src="./img/duck-pixel.png" class="half">
+    </div>
+    <p>Bu ördeği sadece sınırlı sayıdaki bir kareli alanı kullanarak ve her bir kareye sadece tek renk düşecek şekilde çizmenizi istersek, sonuç neye benzeyebilir? Burada doldurduğun her bir tek renk kare, bir pikseldir. Örneğin, LED ekrana sahip bir bilgisayar ekranı her bir pikselin arkasında bir adet LED ampül bulundurduğunu düşünebilirsin. LED ampüllerin renklerini değiştirerek, farklı resimleri gösterebilir.</p>
+</div>
+
+<div class="parent">
+    <div class="wrap">
+        <div>
+            <p>Aşağıdaki ördek çizimini, yanda gördüğün pikseller üzerinde tamamlayabilir misin? Renk değiştirmek için karelerin altındaki renk butonuna basabilirsin.</p>
+            <img class="center-mid" src="./img/duck-art.png">
+        </div>
+        <div class="half">
+            <iframe src="https://editor.p5js.org/asabuncuoglu13/full/Tcmvd_DpD" width="440px" height="480px"></iframe>
+        </div>
+    </div>
+</div>
+
+<button id="next_subject" class="button-background-move right" onclick="nextSubject()"><u>Sonraki Konu: Kodlama ile Temel Şekiller</u></button>
+
+<button id="prev_subject" class="button-background-move left" onclick="prevSubject()"><u>Önceki Konu: Renk Tanımları</u></button>
+
+<script>
+    function prevSubject() {
+        window.location.href = "../3/index.html";
+    }
+
+    function nextSubject() {
+        window.location.href = "../5/index.html";
+    }
+</script>
+</body>
+</html>
