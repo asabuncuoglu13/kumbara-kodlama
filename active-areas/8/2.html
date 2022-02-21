@@ -1,0 +1,35 @@
+<script type="text/p5" data-autoplay data-preview-width="500" data-height="600">
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+    // Draw Body
+    rect(100, 150, 100, 200);
+
+    //Draw Legs
+    fill(200, 100, 100);
+    ellipse(100, 350, 50, 50);
+
+    //Draw Ears
+    line(180, 60, 210, 30);
+    line(210, 30, 220, 80);
+
+    // Draw Face
+
+    // Draw Eyes
+    fill(255);
+    ellipse(120, 100, 50, 50);
+    ellipse(180, 100, 50, 50);
+    fill(0);
+    ellipse(120, 100, 20, 20);
+    ellipse(180, 100, 20, 20);
+
+    // Draw Moustache
+    line(150, 170, 120, 180);
+    line(150, 170, 130, 190);
+}
+
+</script>
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>

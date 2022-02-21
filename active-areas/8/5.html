@@ -1,0 +1,33 @@
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+
+<script type="text/p5" data-autoplay data-preview-width="500" data-height="600">
+var r1, r2, r3, g1, g2, g3, b1, b2, b3 = 0;
+
+function setup() {
+  createCanvas(400, 400);
+
+  r1 = random(100, 255);
+  r2 = random(100, 255);
+  r3 = random(100, 255);
+  g1 = random(100, 255);
+  g2 = random(100, 255);
+  g3 = random(100, 255);
+  b1 = random(100, 255);
+  b2 = random(100, 255);
+  b3 = random(100, 255);
+}
+
+function draw() {
+  background(220);
+  fill(r1, g1, b1);
+  ellipse(200, 350, 530, 530);
+  fill(r2, g2, b2);
+  ellipse(200, 350, 510, 510);
+  fill(r3, g3, b3);
+  ellipse(200, 350, 470, 470);
+  fill(220);
+  ellipse(200, 350, 450, 450);
+}
+
+
+</script>
