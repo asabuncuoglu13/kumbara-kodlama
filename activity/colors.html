@@ -15,6 +15,52 @@
         .checked {
             color: orange;
         }
+
+        /* Phone Portrait */
+        @media (max-device-width: 380px) {
+            .wrap {
+                display:block;
+                margin:auto;
+            }
+
+            .wrap .half {
+                width: 100%;
+                display:block;
+                margin: 0 auto;
+                padding: 14px;
+            }
+        }
+        /* Tablet Portrait and Landscape */
+        @media  (min-device-width: 380px) and (max-device-width: 780px) {
+            .wrap {
+                margin: 0 auto;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .wrap .half {
+                width: 50%;
+                padding: 14px;
+            }
+
+        }
+
+        @media  (min-device-width: 780px) {
+            .wrap {
+                margin: 0 auto;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .wrap .half {
+                width: 50%;
+                padding: 14px;
+            }
+        }
     </style>
 </head>
 <body>
