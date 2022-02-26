@@ -2,21 +2,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-    <link rel="stylesheet" href="../style/prism.css">
-    <link rel="stylesheet" href="../style/index.css">
     <title>Kart-ON ve p5</title>
+    <link rel="stylesheet" href="../style/index.css">
 </head>
 
 <body>
-<h1>P5.js ile Çizim Kodlama</h1>
+<h1>P5.js ile Araba Çizelim</h1>
 
 <div class='parent'>
-    <p> Çizim yapmak, düşüncelerimizi etkili bir şekilde aktarmak için doğal bir yöntemdir. Çizim yaparken hem eğleniriz hem de fikirlerimizi hızlıca görselleştirebiliriz. Bu iletişim biçimindeki en temel hedef, kısa sürede birçok fikri keşfedebilmektir. O zaman bir çizimi kodlama yaparak ifade edebilirsek, dünyadaki sayısız insana düşüncelerimizi dinamik bir biçimde aktarabiliriz!
-    </p>
-
-    <p> Bu seride, çizim ve animasyonlarımızı kodlamak için p5.js adında bir kodlama kütüphanesini kullanacağız. Bu çizim kütüphanesinin yirmi yıllık bir tarihi ve birbiri ile yardımlaşmayı çok seven bir kullanıcı topluluğu var. Yaklaşık yirmi sene önce, hızlı bir şekilde çizim, animasyon ve diğer görsel sanat ürünlerini kodlayabilmek için geliştirilen bu dil ile birçok dijital eser yaratıldı. Seri içinde bu örneklerden bazılarını da seninle paylaşacağız. Serinin bu ilk örneğinde ise, bir p5.js kodunun neye benzediğini göreceğiz.
+    <p> Benzer işlemleri p5.js kütüphanesi ile gerçekleştirerek, linkini kolayca paylaşabileceğimiz tasarımlar yapabiliriz. Bu çizim kütüphanesinin yirmi yıllık bir tarihi ve birbiri ile yardımlaşmayı çok seven bir kullanıcı topluluğu var. Yaklaşık yirmi sene önce, hızlı bir şekilde çizim, animasyon ve diğer görsel sanat ürünlerini kodlayabilmek için geliştirilen bu dil ile birçok dijital eser yaratıldı. Seri içinde bu örneklerden bazılarını da seninle paylaşacağız. Serinin bu ilk örneğinde ise, bir p5.js kodunun neye benzediğini göreceğiz.
     </p>
 </div>
+
 <h2 id="quick-start">p5.js kod yapısı</h2>
 
 <div class='parent'>
@@ -77,8 +74,6 @@ function draw() {
   ellipse(120, 135, 30, 30);
 }
 
-
-
     </script>
 </div>
 
@@ -93,9 +88,8 @@ function draw() {
 
 <script src="../js/jquery.js"></script>
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<script src="../js/prism.js" data-manual></script>
 <button id="next_subject" class="button-background-move right" onclick="nextSubject()"><u>Sonraki Konu: P5.js Programların Özeti</u></button>
-<button id="prev_subject" class="button-background-move left" onclick="prevSubject()"><u>Önceki Konu: Komut Sırası</u></button>
+<button id="prev_subject" class="button-background-move left" onclick="prevSubject()"><u>Önceki Konu: Kart-On ile Araba Çizimi</u></button>
 
 <script>
     function prevSubject() {

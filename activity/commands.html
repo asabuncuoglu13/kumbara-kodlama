@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <title>Kart-ON ile Kodlama</title>
-    <link href='../style/dragula.css' rel='stylesheet' type='text/css'/>
-    <link rel="stylesheet" href="../style/prism.css">
-    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="../style/index.css" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../style/activity.css" rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -16,8 +15,8 @@
     <div class='parent'>
         <p>Bir bilgisayara çizim yaptırmak istersek, bu çizimi hangi renklerle yapacağımızı, hangi şekli nereye çizeceğimizi, bu çizimlerin hangisinin daha önde, hangisinin daha arkada olacağını belirtmemiz gerekir.</p>
         <p class="card">
-            <span><b>Neden Çizim Yaparız?</b></span>
-            <span>Bir bilgisayara çizim yaptırmak istersek, bu çizimi hangi renklerle yapacağımızı, hangi şekli nereye çizeceğimizi, bu çizimlerin hangisinin daha önde, hangisinin daha arkada olacağını belirtmemiz gerekir. </span>
+            <span><b>Neden Çizim Yaparız?</b></span><br>
+            <span>Çizim yapmak, düşüncelerimizi etkili bir şekilde aktarmak için doğal bir yöntemdir. Çizim yaparken hem eğleniriz hem de fikirlerimizi hızlıca görselleştirebiliriz. Bu iletişim biçimindeki en temel hedef, kısa sürede birçok fikri keşfedebilmektir. O zaman bir çizimi kodlama yaparak ifade edebilirsek, dünyadaki sayısız insana düşüncelerimizi dinamik bir biçimde aktarabiliriz! </span>
         </p>
         <p>Bu çizimleri yapabilmek için bu süreçte iki farklı aracı kullanacağız. Bu araçlar, kodlarımızı oluştururken bilgisayara isteklerimizi aktarabilmemizi sağlayabilecek komutları içermektedir.
         <ol>
@@ -27,12 +26,12 @@
         </p>
         <p>Kart-ON ile program oluştururken, komut bloklarını <b>Kodlama Alanı</b> içerisinde alt alta dizeriz. Şimdi ilk denememizi yapalım ve <b>Komutlar</b> alanında gördüğün aşağıdaki iki komutu kodlama alanına sürükleyelim. Ardından, <b>Sonucu Gör</b> butonuna tıklyalım.</p>
         <div class='wrapper'>
-            <div id='left-copy-1tomany' class='container container-left'>
-                Komutlar:
-                <div id="fill240"><img src="../img/doldur240.png" alt="doldur#240"></div>
-                <div id="rect"><img src="../img/dikdortgen.png" alt="dikdörtgen"></div>
+            <div id='left-copy-1tomany' class='row container container-command'>
+                <p style="display:block; top: 0">Komutlar:</p>
+                <div id="fill240" class="column"><img src="../img/doldur240.png" alt="doldur#240"></div>
+                <div id="rect" class="column"><img src="../img/dikdortgen.png" alt="dikdörtgen"></div>
             </div>
-            <div id='right-copy-1tomany' class='container container-right'>
+            <div id='right-copy-1tomany' class='container container-code'>
                 Kodlama Alanı:
             </div>
             <div id='image-result' class='container' style="background-color: #F0F0F0; width: 90%; height: auto;">
@@ -85,6 +84,5 @@
 
 <script src="../js/jquery.js"></script>
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<script src="../js/prism.js" data-manual></script>
 </body>
 </html>

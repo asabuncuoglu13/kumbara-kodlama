@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <title>Kart-ON ile Kodlama</title>
-    <link href='../style/dragula.css' rel='stylesheet' type='text/css'/>
-    <link rel="stylesheet" href="../style/prism.css">
-    <link rel="stylesheet" href="../style/index.css">
+    <link href="../style/index.css" rel='stylesheet' type='text/css'>
+    <link href='../style/karton.css' rel='stylesheet' type='text/css'/>
 
     <script src="../js/p5/p5.min.js"></script>
     <script src="../js/fuse.js"></script>
@@ -69,17 +68,16 @@
         <div class="button-container">
             <div></div>
             <div>
-                <button onclick="clearArea()">temizle</button>
+                <button class="result-button" onclick="clearArea()">temizle</button>
             </div>
             <div>
-                <button onclick="runCommandArray()">çalıştır</button>
-                <button onclick="clearCode()">sıfırla</button>
+                <button class="result-button" onclick="runCommandArray()">çalıştır</button>
             </div>
         </div>
-        <div class="grid-container">
-            <div id='left-copy-1tomany' class='container container-left' style="height: 360px; overflow-y: scroll;">
+        <div class="wrapper">
+            <div id='left-copy-1tomany' class='container container-command' style="height: 360px; overflow-y: scroll;">
             </div>
-            <div id='right-copy-1tomany' class='container container-right' style="height: 360px; overflow-y: scroll;">
+            <div id='right-copy-1tomany' class='container container-code' style="height: 360px; overflow-y: scroll;">
             </div>
             <div>
                 <div id="myContainer" style="min-width: 360px" width="100%" height="320px"></div>
@@ -166,6 +164,5 @@
 
     <script src="../js/jquery.js"></script>
     <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-    <script src="../js/prism.js" data-manual></script>
 </body>
 </html>
