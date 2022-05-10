@@ -5,45 +5,201 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <title>Kart-ON Kartlar</title>
     <style>
+        @import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,500;1,700&family=Shadows+Into+Light+Two&display=swap);
+
+        :root {
+            --buton-blue: #0758dbff;
+            --buton-blue-bg: #042c65;
+            --coding-area-bg: rgba(203, 149, 142, 0.4);
+            --font-color-light: #e8e8e8
+        }
+
+        p, div, button {
+            font-family: Poppins, sans-serif;
+            font-size: 16px;
+            line-height: 26px;
+            color: var(--font-color)
+        }
+
         .gu-mirror {
             position: fixed !important;
             margin: 0 !important;
             z-index: 9999 !important;
-            opacity: 0.8;
+            opacity: .8;
             -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-            filter: alpha(opacity=80);
+            filter: alpha(opacity=80)
         }
 
         .gu-hide {
-            display: none !important;
-        }
-
-        .gu-unselectable {
-            -webkit-user-select: none !important;
-            -moz-user-select: none !important;
-            -ms-user-select: none !important;
-            user-select: none !important;
+            display: none !important
         }
 
         .gu-transit {
-            opacity: 0.2;
+            opacity: .2;
             -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-            filter: alpha(opacity=20);
+            filter: alpha(opacity=20)
+        }
+
+        .container {
+            padding: 0 3px;
+            margin: 5px auto;
+            font-family: 'Poppins', sans-serif
+        }
+
+        .container img {
+            width: 100%
+        }
+
+        .container-command img {
+            display: inline-block
+        }
+
+        .container-command {
+            overflow-y: hidden;
+            width: 100%;
+            border: 1px solid #000
+        }
+
+        .container-code {
+            display: table-cell;
+            background: var(--coding-area-bg);
+            width: 100%;
+            min-height: 240px;
+            max-height: 480px;
+            overflow-y: scroll
+        }
+
+        .container > div, .gu-mirror {
+            padding: 2px;
+            background-color: rgba(0, 0, 0, .2);
+            transition: opacity .4s ease-in-out
+        }
+
+        .container > div {
+            margin: 3px;
+            cursor: grab
+        }
+
+        .gu-mirror {
+            cursor: grabbing
+        }
+
+        .container .ex-moved {
+            background-color: #e74c3c
+        }
+
+        .container.ex-over {
+            background-color: rgba(255, 255, 255, .3)
+        }
+
+        #left-lovehandles > div, #right-lovehandles > div {
+            cursor: initial
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .result-button {
+            cursor: pointer;
+            color: var(--font-color-light);
+            width: 50%;
+            text-transform: uppercase;
+            text-align: center;
+            border: 0;
+            border-bottom: 10px solid;
+            border-color: var(--buton-blue);
+            padding: 14px 10px 10px;
+            margin-top: 8px;
+            background-color: var(--buton-blue-bg);
+            transition: margin-top .05s, margin-bottom .05s, border .05s, padding .05s, top .05s, bottom .05s, width .05s, height .05s
+        }
+
+        .result-button:active {
+            border-bottom-width: 0;
+            margin-top: 24px
+        }
+
+        @media (max-device-width: 480px) {
+            .container-command div {
+                float: left;
+                width: 33.33%;
+                padding: 5px
+            }
+
+            .row::after {
+                content: "";
+                clear: both;
+                display: table
+            }
+
+            .container {
+                width: 100%
+            }
+
+            .wrapper {
+                display: grid;
+                grid-template-columns:50% 50%;
+                justify-content: center;
+                grid-template-areas:"commands commands" "code result"
+            }
+
+            .container-command {
+                grid-area: commands
+            }
+
+            .container-code {
+                grid-area: code
+            }
+        }
+
+        @media (min-device-width: 481px) and (max-device-width: 780px) {
+            .container {
+                max-width: 640px;
+                margin: 5px
+            }
+
+            .wrapper {
+                display: grid;
+                grid-template-columns:30% 30% 40%;
+                justify-content: center
+            }
+
+            .container-code {
+                margin-left: 15px
+            }
+        }
+
+        @media (min-device-width: 781px) {
+            .container {
+                max-width: 720px
+            }
+
+            .wrapper {
+                display: grid;
+                grid-template-columns:30% 30% 40%;
+                justify-content: center
+            }
+
+            .container-code {
+                margin-left: 15px
+            }
         }
     </style>
-    <style>@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,500;1,700&family=Shadows+Into+Light+Two&display=swap);:root{--bg:#d6ffcb;--card-bg:#387002;--background:#9ac4f8ff;--headline:#0758dbff;--buton-bg:#e36588ff;--buton-border:#9a275aff;--buton-blue:#0758dbff;--buton-blue-bg:#042c65;--href:#e36588ff;--font-color:#1f1f1f;--font-color-light:#e8e8e8;--link:#1f1f1f;--coding-area-bg:rgba(203, 149, 142, 0.4);--baby-blue-eyes:#9ac4f8ff;--magic-mint:#99edccff;--rosy-brown:#cb958eff;--blush:#e36588ff;--jazzberry-jam:#9a275aff;--cerulean-blue:#042c65;--jungle-green:#20b08cff;--ruby-red:#952a2eff;--jazzberry-jam:#911b4eff;--tyrian-purple:#580939ff}body,html{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}*,:after,:before{-webkit-box-sizing:inherit;-moz-box-sizing:inherit;box-sizing:inherit}p{font-family:Poppins,sans-serif;font-size:16px;line-height:26px;color:var(--font-color)}li{font-family:Poppins,sans-serif;font-size:14px;line-height:28px}h1{font-size:xxx-large}h2{font-size:xx-large}h1,h2,h3,h4,h5,h6{font-family:'Shadows Into Light Two',cursive;color:var(--headline)}a{font-size:large;text-decoration:none;position:relative;color:var(--href)}a:after{content:'';display:block;border-bottom:calc(.3em + .3vw) solid var(--buton-bg);width:0;position:absolute;left:0;-webkit-transition:1s ease;transition:1s ease}a:hover:after{width:100%}img{width:100%;max-height:100%;object-fit:cover}.center-mid{max-width:480px;display:block;margin:auto;padding:20px}.parent{background-color:rgba(255,255,255,.2);margin:50px 0;padding:20px}.container{padding:0 5px;max-width:1000px;margin:10px auto}.container-command{overflow-y:hidden;width:100%}.container-code{display:table-cell;background:var(--coding-area-bg);width:100%;overflow-y:scroll}.container>div,.gu-mirror{margin:3px;padding:2px;background-color:rgba(0,0,0,.2);transition:opacity .4s ease-in-out}.container>div{cursor:grab}.gu-mirror{cursor:grabbing}.container .ex-moved{background-color:#e74c3c}.container.ex-over{background-color:rgba(255,255,255,.3)}#left-lovehandles>div,#right-lovehandles>div{cursor:initial}.handle{padding:0 5px;margin-right:5px;background-color:rgba(0,0,0,.4);cursor:move}.image-thing{margin:20px 0;display:block;text-align:center}.button-purple{cursor:pointer;color:var(--font-color-light);width:50%;text-transform:uppercase;text-align:center;border:none;border-bottom:10px solid;border-color:var(--buton-blue);padding:14px 10px 10px;margin-top:8px;background-color:var(--buton-blue-bg);transition:margin-top 50ms,margin-bottom 50ms,border 50ms,padding 50ms,top 50ms,bottom 50ms,width 50ms,height 50ms}.button-purple:active{border-bottom-width:0;margin-top:24px}.button-background-move{font-size:16px;font-weight:200;color:var(--font-color-light);letter-spacing:1px;padding:13px 20px 13px;outline:0;border:1px solid var(--buton-border);cursor:pointer;position:relative;background-color:rgba(0,0,0,0);user-select:none;-webkit-user-select:none;touch-action:manipulation}.button-background-move:after{content:"";background-color:var(--buton-bg);width:100%;z-index:-1;position:absolute;height:100%;top:7px;left:7px;transition:.2s}.button-background-move:hover:after{top:0;left:0}.center{display:flex;justify-content:center;align-items:center}.left{float:left}.right{float:right}.title{font-family:Quicksand,sans-serif;color:var(--headline);font-size:40px;margin:20px auto}.info{font-family:'Space Mono',monospace;font-size:12px}@media (max-device-width:380px){body{max-width:360px;min-width:320px;margin:0 auto}.wrap{display:block;margin:auto}.wrap .half{width:100%;display:block;margin:0 auto;padding:14px}.wrapper{display:grid;grid-template-columns:50% 50%;justify-content:center}}@media (min-device-width:380px) and (max-device-width:780px){body{max-width:640px;min-width:320px;margin:0 auto}.wrap{margin:0 auto;display:flex;flex-direction:row;align-items:center;justify-content:center}.wrap .half{width:50%;padding:14px}.wrapper{display:grid;grid-template-columns:10% 40% 50%;justify-content:center}}@media (min-device-width:780px){body{max-width:960px;min-width:320px;margin:0 auto}.wrap{margin:0 auto;display:flex;flex-direction:row;align-items:center;justify-content:center}.wrap .half{width:50%;padding:14px}.wrapper{display:grid;grid-template-columns:25% 35% 40%;justify-content:center}.title-container{display:grid;grid-template-columns:20% 30% 50%;height:4vh}.button-container{display:grid;grid-template-columns:20% 30% 50%;height:6vh}.grid-container{display:grid;grid-template-columns:20% 30% 50%}}input{border:#000 solid 2px;background-color:#ecf0f1;padding:10px;color:#942a57;margin:5px 0;display:block;width:100%}.coding-card{font-family:Poppins,sans-serif;padding:4px;font-size:16px;line-height:26px;color:#000;border-radius:8px}.card{background:var(--buton-blue-bg);color:var(--font-color-light);border-left:16px solid var(--headline);padding:10px}.card a{text-decoration:none;color:var(--background);position:relative;font-weight:700}.card a:after{content:'';display:block;border-bottom:calc(.3em + .3vw) solid var(--background);width:0;position:absolute;left:0;-webkit-transition:1s ease;transition:1s ease}.card a:hover:after{width:100%}div.gallery{border:1px solid #ccc}div.gallery:hover{border:1px solid #777}div.gallery img{width:100%;height:auto}.desc{padding:15px;text-align:center}*{box-sizing:border-box}.responsive{border:solid var(--headline);margin:6px;padding:6px;float:left;width:22.99999%}@media only screen and (max-width:700px){.responsive{width:47.99999%}}@media only screen and (max-width:500px){.responsive{width:100%}}.clearfix:after{content:"";display:table;clear:both}@media (min-width:768px){.button-background-move{padding:13px 50px 13px}}</style>
 </head>
 <body>
 <div class='parent'>
     <div class='wrapper'>
-        <div id='left-copy-1tomany' class='container container-left'>
-            Bloklar:
+        <div id='left-copy-1tomany' class='row container container-command'>
+            Komutlar:
             <div id="fill240"><img src="./img/doldur240.png" alt="doldur#240"></div>
             <div id="rect"><img src="./img/dikdortgen.png" alt="dikdörtgen"></div>
             <div id="fill50"><img src="./img/doldur50.png" alt="doldur#50"></div>
             <div id="elips"><img src="./img/elips.png" alt="elips"></div>
         </div>
-        <div id='right-copy-1tomany' class='container container-right'>
+        <div id='right-copy-1tomany' class='container container-code'>
             Kodlama:
         </div>
         <div id='image-result' class='container' style="background-color: #F0F0F0; width: 90%; height: auto;">
@@ -58,7 +214,7 @@
     </div>
 
     <div id="code" hidden>
-        <p>Evet! Bu sıra ile komutları çalıştırdığında sarı bir dikdörtgenin üzerinde mavi bir daire göreceksin. Bu kodun p5.js ile yazılmış versiyonu ise aşağıdaki gibi gözükecektir. Şimdi "Play" butonuna tıklayarak bu kodun çıktısını görebilirsin:</p>
+        <p>Evet! Bu sırayla komutları çalıştırdığınızda sarı bir dikdörtgenin üzerinde mavi bir daire göreceksiniz. Bu kodun p5.js ile yazılmış hali de aşağıdaki gibi görünecektir. Şimdi "Play" tuşuna tıklayarak bu kodun çıktısını görebilirsiniz:</p>
         <script type="text/p5" data-autoplay data-preview-width="320" data-height="400">
     function setup() {
         createCanvas(300, 300);
@@ -71,6 +227,7 @@
         fill(240, 100, 100);
         ellipse(100, 100, 50, 50);
     }
+
 
 
         </script>
